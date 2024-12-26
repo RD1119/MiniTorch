@@ -74,7 +74,7 @@ def neg(x: float) -> float:
         float : The negation of x.
 
     """
-    return float(-x)
+    return -x
 
 
 # - lt
@@ -162,8 +162,8 @@ def sigmoid(x: float) -> float:
     # For sigmoid calculate as:
     # $f(x) =  \frac{1.0}{(1.0 + e^{-x})}$ if x >=0 else $\frac{e^x}{(1.0 + e^{x})}$
     if x >= 0:
-        return 1.0 / (1.0 + exp(-x))
-    return exp(x) / (1.0 + exp(x))
+        return 1.0 / (1.0 + math.exp(-x))
+    return math.exp(x) / (1.0 + math.exp(x))
 
 
 # - relu

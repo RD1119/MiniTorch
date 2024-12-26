@@ -1,6 +1,5 @@
 from hypothesis import settings
 from hypothesis.strategies import floats, integers
-
 from minitorch.operators import is_close
 
 

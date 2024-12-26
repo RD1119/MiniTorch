@@ -47,10 +47,10 @@ def index_to_position(index: Index, strides: Strides) -> int:
 
     """
     # TODO: Implement for Task 2.1.
-    position = 0
-    for i in range(len(index)):
-        position += index[i] * strides[i]
-    return position
+    pos: int = 0
+    for index_i, strides_i in zip(index, strides):
+        pos += index_i * strides_i
+    return pos
 
 
 def to_index(ordinal: int, shape: Shape, out_index: OutIndex) -> None:
@@ -67,9 +67,10 @@ def to_index(ordinal: int, shape: Shape, out_index: OutIndex) -> None:
 
     """
     # TODO: Implement for Task 2.1.
+    ord = ordinal + 0
     for i in range(len(shape) - 1, -1, -1):
-        out_index[i] = ordinal % shape[i]
-        ordinal = ordinal // shape[i]
+        out_index[i] = ord % shape[i]
+        ord = ord // shape[i]
 
 
 def broadcast_index(
